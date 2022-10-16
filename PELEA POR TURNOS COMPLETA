@@ -1,0 +1,98 @@
+print("Esto es un combate por turnos contra Gonzalo modo enfadado depués de decirle que la inversión constante en peces raros tropicales es una forma inestable de vivir")
+print("Prepárate")
+MODOANTONIOEVIL=0
+kk="0"
+vidatu=100
+vidael=300
+print("..........")
+nivel=int(input("Cual es tu nivel de hermosura (Se recomienda jugar a nivel 10) ---> "))
+import random
+bomba=3
+pocion=2
+b="por algún motivo ahora el loop funciona?"
+for cosa in b:
+    ataque=0
+    antoniotaque=0
+    print("..........")
+    print("ESTA ES TU VIDA --> ", vidatu)
+    print("ESTA ES LA VIDA DE GONZALO --> ", vidael)
+    print("..........")
+    decision=input("¿Qué harás? (ATACAR/ESQUIVAR/OBJETOS)---> ")
+    print("..........")
+
+    if vidatu<=0 and vidael<=0:
+        print("Conseguiste tranquilizar a  Gonzalo, pero al costo de tu vida, habrá que rezar para que tu sacrificio no sea en vano")
+    
+    if vidatu<=0:
+        print("Has perdido tu vida en las manos de Gonzalo, pronto el mundo acabará pues su sed de caos es inagotable")
+        break
+    
+    if vidael<=0:
+        print("Has conseguido tranquilizar a Gonzalo, descansa por ahora, pues este no será tu último enfrentamiento")
+        break
+    
+    else:
+        if decision=="ESQUIVAR":
+            aleatorio=random.randint(0,100)
+            if aleatorio<=(70):
+                antoniotaque=random.randint(10,25)
+                vidatu -= (antoniotaque-int(nivel/3))
+                print("NO ESQUIVASTE BIEN, GONZALO TE HACE", antoniotaque, "DE DAÑO")
+            else:
+                print("ESQUIVASTE EL ATAQUE, NO SUFRES DAÑOS")
+                
+        if decision=="ATACAR":
+            ataque = int((nivel/2) + 20)
+            vidael-=ataque
+            print("HICISTE", ataque, "DE DAÑO")
+            
+            antoniotaque=random.randint(10,25)
+            vidatu -= (antoniotaque-int(nivel/3))
+            print("GONZALO TE HACE", antoniotaque, "DE DAÑO COMO RESPUESTA")
+        
+        if decision==("OBJETOS"):
+            print("..........")
+            print("TIENES: ", bomba, " BOMBA(s)  y ",pocion," POCION(es)" )
+            objeto=input("¿Cuál quieres utilizar? (BOMBA/POCION/NADA) ---> ")
+            print("..........")
+            if objeto==("BOMBA") and bomba>0:
+                danoati=int(random.randint(20,30)-(nivel/8)*10)
+                danoel=int(random.randint(35,60))
+                
+                vidael-= danoel
+                vidatu-= (danoati)
+                print("LA EXPLOSIÓN HIZO ",danoel, " DE DAÑO A GONZALO Y", danoati, " DE DAÑO A TI")
+                antoniotaque=random.randint(8,15)
+                
+                print("GONZALO TE HACE", antoniotaque, "DE DAÑO COMO RESPUESTA")
+                antoniotaque-= int(danoel/4)
+                print("PERO EL DAÑO PRODUCIDO EN SUS BRAZOS POR LA EXPLOSIÓN LO REDUCE A ", antoniotaque, "DE DAÑO")
+                vidatu -= (int(antoniotaque)-int(nivel/3))
+                bomba-=1
+                
+            if objeto==("NADA"):
+                print("GONZALO SIENTE QUE TU NEGACIÓN A ACTUAR ES UNA BURLA Y SE ENFADA")
+                antoniotaque=random.randint(15,25)
+                vidatu -= (int(antoniotaque))    
+                print("SU GOLPE CARGADO CON RESENTIMIENTO TE HACE ",antoniotaque, " DE DAÑO")
+            
+            if objeto==("BOMBA") and bomba==0:
+                print("NO TE QUEDAN BOMBAS")
+    
+            if objeto==("POCION") and pocion==0:
+                print("NO TE QUEDAN POCIONES")
+            
+            if objeto==("POCION") and pocion>0:
+                print("TE TOMAS UNA COPA DE CHAMPÍN, GONZALO QUE ES UN CABALLERO MUY EDUCADO TE DEJA DISFRUTAR DE TU BREBAJE EN PAZ")
+                cura=25
+                pocion-=1
+                if vidatu<75:
+                    vidatu+=cura
+                    print("RECUPERAS ", cura, " DE VIDA")
+                if vidatu>75 and vidatu!=100:
+                    vidatu==100
+                    
+                    print("RECUPERAS ", (100-vidatu), " DE VIDA")
+                if vidatu==100:
+                    print("NO RECUPERAS NADA DE VIDA PORQUE YA ESTÁS AL MÁXIMO")
+              
