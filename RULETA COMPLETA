@@ -98,3 +98,4 @@ if(ENTRAR=="N"):
             
 if(ENTRAR!="N") and (ENTRAR!="Y"):
         print("Te he pedido una respuesta de Y o N, por maleducado ya no te dejo entrar :(")
+        
