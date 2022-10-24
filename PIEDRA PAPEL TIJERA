@@ -4,7 +4,9 @@ nc=input("¿Cómo se llama el ordenador? --> ")
 ny=input("¿Cómo te llamas? --> ")
 pc=0
 py=0
-for cosa in "b":
+b="nose"
+for cosa in b:
+
     nel=random.randint(0, 2)
     if nel==0:
         el="PIEDRA"
@@ -53,5 +55,10 @@ for cosa in "b":
     print(ny, "TIENE", py, "PUNTOS")
     print(nc, "TIENE", pc, "PUNTOS")
     print("----------")
-
+    if(ny>3):
+        print(ny,"HA GANADO")
+        break
+    if(nc>3):
+        print(nc,"HA GANADO")
+        break
     
