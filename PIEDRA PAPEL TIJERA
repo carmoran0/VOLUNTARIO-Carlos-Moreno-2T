@@ -55,10 +55,10 @@ for cosa in b:
     print(ny, "TIENE", py, "PUNTOS")
     print(nc, "TIENE", pc, "PUNTOS")
     print("----------")
-    if(ny>3):
+    if(int(py)>3):
         print(ny,"HA GANADO")
         break
-    if(nc>3):
+    if(int(pc)>3):
         print(nc,"HA GANADO")
         break
     
