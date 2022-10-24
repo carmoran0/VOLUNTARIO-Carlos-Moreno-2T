@@ -1,0 +1,28 @@
+print"Vamos a jugar a piedra papel o tijera"
+import.random
+nel=random.randint(0, 2)
+if nel==0
+    el="PIEDRA"
+if nel==1
+    el="PAPEL"
+if nel==2
+    el="TIJERA"
+tu=input("(PIEDRA/PAPEL/TIJERA)")
+if tu=="PIEDRA"
+    tun=0
+if tu=="PAPEL"
+    tun=1
+if tu=="TIJERA"
+    tun=2
+if nel==tun
+    print"EMPATE"
+if el=="TIJERA" and tu=="PAPEL"
+if el=="TIJERA" and tu=="ROCA"
+
+if el=="PAPEL" and tu=="TIJERA"
+if el=="PAPEL" and tu=="ROCA"
+
+if el=="ROCA" and tu=="TIJERA"
+if el=="ROCA" and tu=="PAPEL"
+
+
