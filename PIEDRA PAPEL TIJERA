@@ -1,5 +1,7 @@
 print("Vamos a jugar a piedra papel o tijera")
 import random
+nc=input("¿Cómo se llama el ordenador? --> ")
+ny=input("¿Cómo te llamas? --> ")
 
 for cosa in "b":
     nel=random.randint(0, 2)
@@ -9,27 +11,40 @@ for cosa in "b":
         el="PAPEL"
     if nel==2:
         el="TIJERA"
-    tu=input("(PIEDRA/PAPEL/TIJERA)")
-    if tu=="PIEDRA":
-        tun=0
-    if tu=="PAPEL":
-        tun=1
-    if tu=="TIJERA":
-        tun=2
+    tu=input("(PIEDRA, PAPEL o TIJERA) ---> ")
+
+    print(nc, "ELIGE",el)
+    
     if nel==tun:
         print("EMPATE")
-    if el=="TIJERA" and tu=="PAPEL":
-        print("")
-    if el=="TIJERA" and tu=="ROCA":
-        print("")
         
+    if el=="TIJERA" and tu=="PAPEL":
+        print(nc, "CORTA A", ny)
+        print(nc, "GANA")
+        pc+=1
+        
+    if el=="TIJERA" and tu=="ROCA":
+        print(ny, "APLASTA A", nc)
+        print(ny, "GANA")
+        py+=1
+    
     if el=="PAPEL" and tu=="TIJERA":
-        print("")
+        print(ny, "CORTA A", nc)
+        print(ny, "GANA")        
+        py+=1
+    
     if el=="PAPEL" and tu=="ROCA":
-        print("")
+        print(nc,"ATRAPA A", ny)
+        print(nc, "GANA")
+        pc+=1
         
     if el=="ROCA" and tu=="TIJERA":
-        print("")
+        print(nc, "APLASTA A", ny)
+        print(nc, "GANA")
+        pc+=1
+
     if el=="ROCA" and tu=="PAPEL":
-        print("")
+        print(ny,"ATRAPA A", nc)
+        print(ny, "GANA")
+        py+=1    
     
