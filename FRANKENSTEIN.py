@@ -7,23 +7,18 @@ bal = 0
 
 def menu():
     global bal
-    print ("Tienes", bal, "Antoniofichas™")
+    print("Tienes", bal, "Antoniofichas™")
     quehacer = input("¿Quieres jugar ruleta (1), tragaperras (2), comprar fichas (3) o retirar ganancias (4)?")
     if quehacer == "1":
-        print( )
         ruleta()
     if quehacer == "2":
         tragaperras()
-        print( )
     if quehacer == "3":
         ingresar()
-        print( )
     if quehacer == "4":
         retirar()
-        print( )
     else:
         menu()
-        print( )
 
 
 def ingresar():
@@ -44,9 +39,16 @@ def ingresar():
 def tragaperras():
     global bal
     if bal > 0:
-        print("Bienvenido al Tragaperras Antonieto, 10AC la tirada")
+        print("Tienes",bal,"Antoniofichas™")
+        print("Bienvenido al Tragaperras Antonieto, hay tiradas de 5,25,50 y 200 Antoniofichas™ [0 para salir]")
         time.sleep(1)
-        bal = int(input("¿Cuantas Antoniocoins™ desea depositar? (Debido a la inflacion, 1ac=0.0000456USD):"))
+        apuestraga = int(input("¿Cuantas Antoniofichas™ desea apostar?:"))
+        if apuestraga == 0:
+            menu()
+        if apuestraga != 5 and apuestraga != 25 and apuestraga != 50 and apuestraga != 200:
+            print("No.")
+            time.sleep(1.5)
+            tragaperras()
         time.sleep(1)
         tale = random.randint(3, 5)
         for cont in range(1, tale):
@@ -59,90 +61,85 @@ def tragaperras():
             print("Procesando...")
             time.sleep(0.5)
             print('\n' * 150)
-        rea = input("¿Preparado? ^[Y/N]")
-        if rea != "Y":
-            quit()
-        if rea == "Y":
-            while True:
-                if bal < 0:
-                    print("Te quedaste sin AntonioCoins...")
-                    bal = bal + 100
-                    sn = input(
-                        "Te gustaria un rescate de 100 AntonioCoins a cambio de un miembro de su familia (a elegir):[Y/N]")
-                    if sn != "Y":
-                        quit()
-                print("Tienes ", bal, " AntonioCoins.")
-                time.sleep(2)
-                bal = bal - 10
-                cosanum1 = random.randint(1, 7)
-                if cosanum1 == 1:
-                    cosa1 = "[Cereza]"
-                if cosanum1 == 2:
-                    cosa1 = "[Plátano]"
-                if cosanum1 == 3:
-                    cosa1 = "[Campana]"
-                if cosanum1 == 4:
-                    cosa1 = "[Uvas]"
-                if cosanum1 == 5:
-                    cosa1 = "[Limon]"
-                if cosanum1 == 6:
-                    cosa1 = "[Naranja]"
-                if cosanum1 == 7:
-                    cosa1 = "[¡Diamante!]"
-                cosanum2 = random.randint(1, 7)
-                if cosanum2 == 1:
-                    cosa2 = "[Cereza]"
-                if cosanum2 == 2:
-                    cosa2 = "[Plátano]"
-                if cosanum2 == 3:
-                    cosa2 = "[Campana]"
-                if cosanum2 == 4:
-                    cosa2 = "[Uvas]"
-                if cosanum2 == 5:
-                    cosa1 = "[Limon]"
-                if cosanum2 == 6:
-                    cosa2 = "[Naranja]"
-                if cosanum2 == 7:
-                    cosa2 = "[¡Diamante!]"
-                cosanum3 = random.randint(1, 8)
-                if cosanum3 == 1:
-                    cosa3 = "[Cereza]"
-                if cosanum3 == 2:
-                    cosa3 = "[Plátano]"
-                if cosanum3 == 3:
-                    cosa3 = "[Campana]"
-                if cosanum3 == 4:
-                    cosa3 = "[Uvas]"
-                if cosanum3 == 5:
-                    cosa3 = "[Limon]"
-                if cosanum3 == 6:
-                    cosa3 = "[Naranja]"
-                if cosanum3 == 7:
-                    cosa3 = "[¡Diamante!]"
-                print(cosa1, cosa2, cosa3)
-                time.sleep(1)
-                if cosa1 == "[¡Diamante!]":
-                    print("Diamante, +10 AntonioCoins.")
-                    bal = bal + 20
+            if bal < 0:
+                print("Te quedaste sin AntonioCoins...")
+                bal = bal + 100
+                sn = input(
+                    "Te gustaria un rescate de 100 AntonioCoins a cambio de un miembro de su familia (a elegir):[Y/N]")
+                if sn != "Y":
+                    quit()
+            print("Tienes ", bal, " AntonioCoins.")
+            time.sleep(2)
+            bal = bal - 10
+            cosanum1 = random.randint(1, 7)
+            if cosanum1 == 1:
+                cosa1 = "[Cereza]"
+            if cosanum1 == 2:
+                cosa1 = "[Plátano]"
+            if cosanum1 == 3:
+                cosa1 = "[Campana]"
+            if cosanum1 == 4:
+                cosa1 = "[Uvas]"
+            if cosanum1 == 5:
+                cosa1 = "[Limon]"
+            if cosanum1 == 6:
+                cosa1 = "[Naranja]"
+            if cosanum1 == 7:
+                cosa1 = "[¡Diamante!]"
+            cosanum2 = random.randint(1, 7)
+            if cosanum2 == 1:
+                cosa2 = "[Cereza]"
+            if cosanum2 == 2:
+                cosa2 = "[Plátano]"
+            if cosanum2 == 3:
+                cosa2 = "[Campana]"
+            if cosanum2 == 4:
+                cosa2 = "[Uvas]"
+            if cosanum2 == 5:
+                cosa1 = "[Limon]"
+            if cosanum2 == 6:
+                cosa2 = "[Naranja]"
+            if cosanum2 == 7:
+                cosa2 = "[¡Diamante!]"
+            cosanum3 = random.randint(1, 8)
+            if cosanum3 == 1:
+                cosa3 = "[Cereza]"
+            if cosanum3 == 2:
+                cosa3 = "[Plátano]"
+            if cosanum3 == 3:
+                cosa3 = "[Campana]"
+            if cosanum3 == 4:
+                cosa3 = "[Uvas]"
+            if cosanum3 == 5:
+                cosa3 = "[Limon]"
+            if cosanum3 == 6:
+                cosa3 = "[Naranja]"
+            if cosanum3 == 7:
+                cosa3 = "[¡Diamante!]"
+            print(cosa1, cosa2, cosa3)
+            time.sleep(1)
+            if cosa1 == "[¡Diamante!]":
+                print("Diamante, +10 AntonioCoins.")
+                bal = bal + 20
 
-                if cosa2 == "[¡Diamante!]":
-                    print("Diamante, +10 AntonioCoins.")
-                    bal = bal + 20
-                if cosa3 == "[¡Diamante!]":
-                    print("Diamante, +10 AntonioCoins.")
-                    bal = bal + 20
-                if cosa1 == cosa2 == cosa3:
-                    print("¡Ganaste 1000ac!")
-                    bal = bal + 10
-                    bal = bal + 10000
-                    time.sleep(1)
-                    sj = input("¿Te gustaría seguir jugando?[Y/N]")
-                    if sj != "Y":
-                        quit()
-    else:
-        print("No tienes suficientes fichas para jugar, por favor compra para jugar")
-        time.sleep(2)
-        menu()
+            if cosa2 == "[¡Diamante!]":
+                print("Diamante, +10 AntonioCoins.")
+                bal = bal + 20
+            if cosa3 == "[¡Diamante!]":
+                print("Diamante, +10 AntonioCoins.")
+                bal = bal + 20
+            if cosa1 == cosa2 == cosa3:
+                print("¡Ganaste 1000ac!")
+                bal = bal + 10
+                bal = bal + 10000
+                time.sleep(1)
+                sj = input("¿Te gustaría seguir jugando?[Y/N]")
+                if sj != "Y":
+                    quit()
+        else:
+            print("No tienes suficientes fichas para jugar, por favor compra para jugar")
+            time.sleep(2)
+            menu()
 
 
 def ruleta():
@@ -242,8 +239,9 @@ def ruleta():
 def retirar():
     print("...")
 
-print("¿Bienvenido al casino, quieres apostar tu alma en apuestas que solo te harán sentir un gran vacio en tu alma? [Y/N]")
-time.sleep(1)
+
+print(
+    "¿Bienvenido al casino, quieres apostar tu alma en apuestas que solo te harán sentir un gran vacio en tu alma? [Y/N]")
 ENTRAR = input("-->")
 if (ENTRAR == "Y"):
     menu()
