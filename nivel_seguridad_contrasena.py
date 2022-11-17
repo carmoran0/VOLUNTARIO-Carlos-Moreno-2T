@@ -59,6 +59,12 @@ def contrasen():
 
     fortal = fortal + len(password) / 2
 
+    if password.len() < 8
+        print("NO cumple el criterio de más de 8 carácteres")
+        fortal = fortal - 1
+    else:
+        print("CUMPLE con el criterio de más de 8 carácteres")
+    
     if password.islower() or password.isupper():
         print("NO cumple el criterio de tener mayus y minus")
         mayusminus = False
