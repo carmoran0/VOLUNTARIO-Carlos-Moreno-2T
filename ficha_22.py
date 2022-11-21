@@ -12,8 +12,11 @@ def main():
                 aas = aas + 1
         cuenta.append(aas)
     print(cuenta)
+    valomax = max(cuenta)
+    print(valomax)
+    posfinal = cuenta.index(valomax)
+    print(posfinal)
+    print("LA PALABRA ES ", listapa[posfinal])
     
-   # print("La palabra con más A es: ", listapa[gana])
-
 while True:
     main()
