@@ -17,6 +17,6 @@ def main():
     posfinal = cuenta.index(valomax)
     print(posfinal)
     print("LA PALABRA ES ", listapa[posfinal])
-    
+
 while True:
     main()
