@@ -18,9 +18,5 @@ def main():
     print(posfinal)
     print("LA PALABRA ES ", listapa[posfinal])
 
-        
-    
-   # print("La palabra con más A es: ", listapa[gana]) if cuenta[i] > cuenta[i+1]:
-
 while True:
     main()
