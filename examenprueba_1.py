@@ -10,6 +10,4 @@ for palabra in listapa:
         if palabra[letrapos] != "a" and palabra[letrapos] != "e" and palabra[letrapos] != "i" and palabra[letrapos] != "o" and palabra[letrapos] != "u":
             consonantes = consonantes+1
     consolista.append(consonantes)
-valomax=max(consolista)
-print(valomax)
 print(consolista)
